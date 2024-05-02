@@ -1,4 +1,5 @@
-from openJDK:17-alphine
+FROM openjdk:17-alpine
 
-copy target/deploying-to-aws-0.0.1-SNAPSHOT.jar   aws.jar
+COPY target/deploying-to-aws-0.0.1-SNAPSHOT.jar /aws.jar
+
 ENTRYPOINT ["java", "-jar", "/aws.jar"]
